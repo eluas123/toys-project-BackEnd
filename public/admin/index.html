@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="api.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="container-fluid d-flex justify-content-around align-items-center">
+        <div class="text-white">REQ / RES</div>
+        <a href="index.html">GET</a>
+        <a href="index.html">POST</a>
+        <a href="index.html">PUT</a>
+        <a href="index.html">DELETE</a>
+    </header>
+    <h1 class="text-center mt-5">Toys API</h1>
+    <h2 class="ms-5 mt-5">Toys Routes http://localhost:3000/</h2>
+    <div class="container-fluid2 shadow">
+        <div class="container d-flex justify-content-evenly mt-2 pt-5">
+            <div class="box">GET
+                <hr>
+                <div class="url mt-5">URL
+                </div>
+                <hr>
+                <p>/toys</p>
+                <div class="Description">Description
+                </div>
+                <hr>
+                <p>Get a list of all the toys, will present 10 result per page</p>
+            </div>
+            <div class="box">GET
+                <hr>
+                <div class="url mt-5">URL
+                </div>
+                <hr>
+                <p>/toys?page=2</p>
+                <div class="Description">Description
+                </div>
+                <hr>
+                <p>List Toys by page,will present 10 result per page</p>
+            </div>
+            <div class="box">GET
+                <hr>
+                <div class="url mt-5">URL
+                </div>
+                <hr>
+                <p>/toys/cat?category=humans</p>
+                <div class="Description">Description
+                </div>
+                <hr>
+                <p>List Toys by Category</p>
+            </div>
+            <div class="box">GET
+                <hr>
+                <div class="url mt-5">URL
+                </div>
+                <hr>
+                <p>/toys/search?s=power</p>
+                <div class="Description">Description
+                </div>
+                <hr>
+                <p>Search Toys by name or info</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid3 shadow">
+        <div class="container d-flex justify-content-evenly mt-5 pt-5">
+            <div class="box2 text-success">POST
+                <hr>
+                <div class="url mt-5">URL
+                </div>
+                <hr>
+                <p>/toys</p>
+                <div class="Description mt-5">Description
+                </div>
+                <hr>
+                <p>Add a new toy to the data base, You need a token for this query</p>
+                <div class="body mt-5">Body</div>
+                <hr>
+                <textarea class="mt-3">{
+"name": "Pickachu",
+"info": "Electric power",
+"category": "animals",
+"img_url": "image....jpg",
+"price": "20"
+}</textarea>
+            </div>
+            <div class="box2 text-warning">PUT
+                <hr>
+                <div class="url mt-5">URL
+                </div>
+                <hr>
+                <p>/toys/:id</p>
+                <div class="Description mt-5">Description
+                </div>
+                <hr>
+                <p>Update a toy in the data base, You need a token and the ID of the product for this query</p>
+                <div class="body mt-5">Body</div>
+                <hr>
+                <textarea class="mt-3">{
+"name": "Pickachu Electric",
+"info": "Electric Super power",
+"category": "animals",
+"img_url": "image....jpg",
+"price": "20"
+}</textarea>
+            </div>
+            <div id="@" class="box2 text-danger">DELETE
+                <hr>
+                <div class="url mt-5">URL
+                </div>
+                <hr>
+                <p>/toys/:id</p>
+                <div class="Description mt-5">Description
+                </div>
+                <hr>
+                <p>Delete a toy in the data base, You need a token and the ID of the product for this query</p>
+                <div class="body mt-5">Body</div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <h2 class="ms-5 mt-5">Users Routes http://localhost:3000/</h2>
+    <div class="container-fluid3">
+        <div class="container d-flex justify-content-evenly mt-2 p-5">
+            <div class="box2 text-dark">POST
+                <hr>
+                <div class="url text-dark mt-5">URL
+                </div>
+                <hr>
+                <p>/users</p>
+                <div class="Description text-dark mt-5">Description
+                </div>
+                <hr>
+                <p>add a new user to the data base</p>
+                <div class="body text-dark mt-5">Body</div>
+                <hr>
+                <textarea class="mt-3">{             
+"name":"elias",
+"email":"elias@walla.com",
+"pass":"123"            
+}</textarea>
+            </div>
+            <div class="box2 text-dark">POST
+                <hr>
+                <div class="url text-dark mt-5">URL
+                </div>
+                <hr>
+                <p>/users/login</p>
+                <div class="Description text-dark mt-5">Description
+                </div>
+                <hr>
+                <p>user login if the email and password correct the server will be respond with a token</p>
+                <div class="body text-dark mt-5">Body</div>
+                <hr>
+                <textarea class="mt-3">{
+"email":"elias@walla.com",
+"pass":"123
+}</textarea>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid mt-5 d-flex justify-content-center align-items-center">All Right Reserved to Elias-Areta 2022</footer>
+</body>
+
+</html>

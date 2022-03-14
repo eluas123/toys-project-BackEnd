@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+.body {
+    font-family: sans-serif;
+}
+
+.container-fluid {
+    min-height: 50px;
+    background: #0E1E5B;
+}
+
+form {
+    min-height: 250px;
+}
+
+label {
+    font-weight: 600;
+}
+
+.btn {
+    font-weight: 700;
+    color: white;
+    background: #0E1E5B;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+table {
+    min-height: 300px;
+}
