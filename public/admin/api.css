@@ -29,6 +29,11 @@ h2 {
     font-weight: 750;
 }
 
+.domain {
+    height: 100px;
+    background: #0E1E5B;
+}
+
 .container-fluid2 {
     min-height: 500px;
 }
