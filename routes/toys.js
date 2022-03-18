@@ -19,15 +19,15 @@ router.get("/", async(req, res) => {
 })
 
 
-///?category=anime
+////toys/cat?category=humans get list by category 
 router.get("/cat", (req, res) => {
-    let categoryQ = req.query.category;
-    let temp_ar = products_ar.filter(item => {
-        return item.category == categoryQ;
+        let categoryQ = req.query.category;
+        let temp_ar = products_ar.filter(item => {
+            return item.category == categoryQ;
+        })
+        res.json(temp_ar);
     })
-    res.json(temp_ar);
-})
-
+    /////toys/search?s=power get list by name or info
 router.get("/search", async(req, res) => {
         try {
             let searchQ = req.query.s;
@@ -40,23 +40,7 @@ router.get("/search", async(req, res) => {
             res.status(500).json({ msg: "There problem in server try again later" });
         }
     })
-    //NOT RELEVANTI
-    // router.get("/usertoys", authToken, async(req, res) => {
-    //     try {
-    //         let perPage = req.query.perPage || 4;
-    //         let page = req.query.page || 1;
-    //         let data = await toysModel.find({ _id: req.tokenData._id })
-    //             .limit(perPage)
-    //             .skip((page - 1) * perPage)
-    //             .sort({ _id: -1 });
-    //         res.json(data);
-    //     } catch (err) {
-    //         console.log(err);
-    //         res.status(500).json({ msg: "There problem in server try again later" })
-    //     }
-    // })
-
-///POST
+    ///POST
 router.post("/", authToken, async(req, res) => {
     let validBody = validtoys(req.body);
     if (validBody.error) {
