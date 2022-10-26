@@ -4,6 +4,18 @@ const { products_ar } = require("../jsons/toysData");
 const { toysModel, validtoys } = require("../models/toysModel");
 const router = express.Router();
 
+//get all the toys in the data base
+router.get("/getAll", async(req, res) => {
+    try {
+        let data = await toysModel.find({})
+        res.json(data);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ msg_err: "There problem in server try again later" })
+    }
+})
+
+///get toys in the data base by per page 10
 router.get("/", async(req, res) => {
     try {
         let perPage = req.query.perPage || 10;
@@ -40,7 +52,23 @@ router.get("/search", async(req, res) => {
             res.status(500).json({ msg: "There problem in server try again later" });
         }
     })
-    ///POST
+    ///byMin&Max?min=10&max=100 search price by minumum and maximum
+router.get("/byMin&Max", async(req, res) => {
+    try {
+        let min = req.query.min;
+        let max = req.query.max;
+        console.log("min", min)
+        console.log("max", max)
+        let data = await toysModel.find({ $and: [{ price: { $gt: min } }, { price: { $lt: max } }] })
+            .limit(20)
+        res.json(data);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ msg: "There problem in server try again later" });
+    }
+})
+
+///POST
 router.post("/", authToken, async(req, res) => {
     let validBody = validtoys(req.body);
     if (validBody.error) {
