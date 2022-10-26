@@ -1,8 +1,3 @@
-heroku link
-https://elias-project.herokuapp.com
 
-githun link
+github link
 https://github.com/eluas123/eliasapp
-
-netify link
-https://elias-project-nodejs.netlify.app
